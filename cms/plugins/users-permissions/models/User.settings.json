@@ -49,10 +49,6 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "posts": {
-      "collection": "post",
-      "via": "author"
-    },
     "articles": {
       "collection": "article",
       "via": "author"

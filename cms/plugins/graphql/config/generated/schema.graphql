@@ -26,14 +26,6 @@ type createArticlePayload {
   article: Article
 }
 
-input createPostInput {
-  data: PostInput
-}
-
-type createPostPayload {
-  post: Post
-}
-
 input createRoleInput {
   data: RoleInput
 }
@@ -61,14 +53,6 @@ input deleteArticleInput {
 
 type deleteArticlePayload {
   article: Article
-}
-
-input deletePostInput {
-  where: InputID
-}
-
-type deletePostPayload {
-  post: Post
 }
 
 input deleteRoleInput {
@@ -108,13 +92,6 @@ input editFileInput {
   related: [ID]
 }
 
-input editPostInput {
-  title: String
-  content: String
-  image: ID
-  author: ID
-}
-
 input editRoleInput {
   name: String
   description: String
@@ -132,7 +109,6 @@ input editUserInput {
   confirmed: Boolean
   blocked: Boolean
   role: ID
-  posts: [ID]
   articles: [ID]
 }
 
@@ -158,15 +134,12 @@ The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://
 """
 scalar JSON
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Article | createArticlePayload | updateArticlePayload | deleteArticlePayload | Post | createPostPayload | updatePostPayload | deletePostPayload | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Article | createArticlePayload | updateArticlePayload | deleteArticlePayload | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload
 
 type Mutation {
   createArticle(input: createArticleInput): createArticlePayload
   updateArticle(input: updateArticleInput): updateArticlePayload
   deleteArticle(input: deleteArticleInput): deleteArticlePayload
-  createPost(input: createPostInput): createPostPayload
-  updatePost(input: updatePostInput): updatePostPayload
-  deletePost(input: deletePostInput): deletePostPayload
 
   """Create a new role"""
   createRole(input: createRoleInput): createRolePayload
@@ -188,29 +161,9 @@ type Mutation {
   upload(refId: ID, ref: String, source: String, file: Upload!): UploadFile!
 }
 
-"""blog post"""
-type Post {
-  id: ID!
-  created_at: DateTime!
-  updated_at: DateTime!
-  title: String!
-  content: String
-  image: UploadFile
-  author: UsersPermissionsUser
-}
-
-input PostInput {
-  title: String!
-  content: String
-  image: ID
-  author: ID
-}
-
 type Query {
   article(id: ID!): Article
   articles(sort: String, limit: Int, start: Int, where: JSON): [Article]
-  post(id: ID!): Post
-  posts(sort: String, limit: Int, start: Int, where: JSON): [Post]
   files(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
   role(id: ID!): UsersPermissionsRole
 
@@ -238,15 +191,6 @@ input updateArticleInput {
 
 type updateArticlePayload {
   article: Article
-}
-
-input updatePostInput {
-  where: InputID
-  data: editPostInput
-}
-
-type updatePostPayload {
-  post: Post
 }
 
 input updateRoleInput {
@@ -295,7 +239,6 @@ input UserInput {
   confirmed: Boolean
   blocked: Boolean
   role: ID
-  posts: [ID]
   articles: [ID]
 }
 
@@ -342,6 +285,5 @@ type UsersPermissionsUser {
   confirmed: Boolean
   blocked: Boolean
   role: UsersPermissionsRole
-  posts(sort: String, limit: Int, start: Int, where: JSON): [Post]
   articles(sort: String, limit: Int, start: Int, where: JSON): [Article]
 }

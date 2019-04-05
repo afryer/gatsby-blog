@@ -1,0 +1,161 @@
+//REM px font size
+@mixin font-size($size: 1.4) {
+  font-size: $size * 10 + px;
+  font-size: $size + rem;
+}
+
+// Clearfix
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: ' '; // 1
+    display: table; // 2
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin visually-hidden {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  margin: (-1px) !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+}
+
+@mixin hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+@mixin display-block {
+  display: block !important;
+  width: 100% !important;
+}
+
+@mixin display-inline {
+  display: inline-block !important;
+}
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@mixin rem-fallback($property, $values...) {
+  $max: length($values);
+  $pxValues: '';
+  $remValues: '';
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $pxValues: #{$pxValues + $value * 10}px;
+
+    @if $i < $max {
+      $pxValues: #{$pxValues + ' '};
+    }
+  }
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $remValues: #{$remValues + $value}rem;
+
+    @if $i < $max {
+      $remValues: #{$remValues + ' '};
+    }
+  }
+
+  #{$property}: $pxValues;
+  #{$property}: $remValues;
+}
+
+// uses breakpoints defined in variables.scss
+@mixin breakpoint($point, $value: 0) {
+  @if $point == xs {
+    @media screen and (max-width: $xs-max) {
+      @content;
+    }
+  }
+  @else if $point == sm {
+    @media screen and (min-width: $sm-min) {
+      @content;
+    }
+  }
+  @else if $point == md {
+    @media screen and (min-width: $md-min) {
+      @content;
+    }
+  }
+  @else if $point == lg {
+    @media screen and (min-width: $lg-min) {
+      @content;
+    }
+  }
+  @else {
+    @media screen and ($point: $value) {
+      @content;
+    }
+  }
+}
+
+@mixin between-breakpoints($min, $max) {
+  @media screen and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+// get-sprite.sass
+// sprite mixin that can be used to include a sprite into media queries
+// @include get-sprite($map, $sprite, $height, $width, $offset-x, $offset-y, $repeat);
+// $map is the name of the sprite map, this is auto-generated as a global
+// sass var when you do a (for instance) @import 'sprites-x2/*.png'
+// ----------
+// Example: @include get-sprite($sprites-x2-sprites, logo, false, false);
+//
+
+@mixin get-sprite($map, $sprite, $height: true, $width: true, $offset-x: 0, $offset-y: 0, $repeat: no-repeat) {
+  //http://compass-style.org/reference/compass/helpers/sprites/#sprite-file
+  $sprite-image: sprite-file($map, $sprite);
+
+  // http://compass-style.org/reference/compass/helpers/sprites/#sprite-url
+  $sprite-map: sprite-url($map);
+
+  // http://compass-style.org/reference/compass/helpers/sprites/#sprite-position
+  $sprite-position: sprite-position($map, $sprite, $offset-x, $offset-y);
+
+  // Returns background
+  background: $sprite-map $sprite-position $repeat;
+
+  // http://compass-style.org/reference/compass/helpers/image-dimensions/
+  // Checks to see if the user wants height returned
+  @if $height == true {
+    // Gets the height of the sprite-image
+    $sprite-height: image-height($sprite-image);
+
+    // Returns the height
+    height: $sprite-height;
+  }
+
+  // http://compass-style.org/reference/compass/helpers/image-dimensions/
+  // Checks to see if the user wants height returned
+  @if $width == true {
+    // Gets the width of the sprite-image
+    $sprite-width: image-width($sprite-image);
+
+    // Returns the width
+    width: $sprite-width;
+  }
+}

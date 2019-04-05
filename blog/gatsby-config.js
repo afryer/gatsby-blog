@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sass",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -23,6 +24,18 @@ module.exports = {
           "user",
         ],
         queryLimit: 1000,
+      },
+    },
+    {
+      resolve: "gatsby-source-strava-activities",
+      options: {
+        // This is the "Access Token" from:
+        // https://www.strava.com/settings/api
+        authToken: "76b4ec0f6143822d5f5d33a42fc554daa5f9f82d",
+        // [Optional] An epoch timestamp to use for filtering activities that have taken place after a certain time.
+        after: "",
+        // An epoch timestamp to use for filtering activities that have taken place before a certain time.
+        before: "1522789834",
       },
     },
     "gatsby-transformer-sharp",

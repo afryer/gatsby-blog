@@ -1,0 +1,395 @@
+/*------------------------------------*\
+		$HELPER
+\*------------------------------------*/
+
+// helper classes
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+  content: ' '; /* 1 */
+  display: table; /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clear {
+  clear: both;
+}
+
+.clear-left {
+  clear: left !important;
+}
+
+.clear-right {
+  clear: right !important;
+}
+
+.clear-none {
+  clear: none !important;
+}
+
+.float-none {
+  float: none !important;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+// breakpoint-specific float: right utility classes
+@if $responsive {
+  @include between-breakpoints($xs-min, $xs-max) {
+    .float-right--xs {
+      float: right !important;
+    }
+  }
+
+  @include between-breakpoints($sm-min, $sm-max) {
+    .float-right--sm {
+      float: right !important;
+    }
+  }
+
+  @include breakpoint(sm) {
+    .float-right--sm-plus {
+      float: right !important;
+    }
+  }
+
+  @include between-breakpoints($md-min, $md-max) {
+    .float-right--md {
+      float: right !important;
+    }
+  }
+
+  @include breakpoint(md) {
+    .float-right--md-plus {
+      float: right !important;
+    }
+  }
+
+  @include breakpoint(lg) {
+    .float-right--lg {
+      float: right !important;
+    }
+  }
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.width-full {
+  width: 100% !important;
+}
+
+.width-auto {
+  width: auto !important;
+}
+
+.align-top {
+  vertical-align: top !important;
+}
+
+.align-middle {
+  vertical-align: middle !important;
+}
+
+.align-bottom {
+  vertical-align: bottom !important;
+}
+
+// normalise block heights using display-table above mobile
+.display-table-wrapper {
+  @include breakpoint(sm) {
+    margin: 0 -20px;
+    padding: 0;
+  }
+}
+
+.display-table {
+  @include breakpoint(sm) {
+    width: 100%;
+    display: table;
+    border-spacing: 20px 0;
+    position: relative;
+  }
+}
+
+.display-table-cell {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  clear: both;
+
+  @include breakpoint(sm) {
+    display: table-cell !important;
+    border-collapse: separate;
+  }
+}
+
+// modifying classes define the number of columns
+// or use a grid mixin, if available
+.display-one-half {
+  @include breakpoint(sm) {
+    width: 50% !important;
+  }
+}
+
+.display-one-third {
+  @include breakpoint(sm) {
+    width: 33.3333% !important;
+  }
+}
+
+.display-one-quarter {
+  @include breakpoint(sm) {
+    width: 25% !important;
+  }
+}
+
+.display-one-fifth {
+  @include breakpoint(sm) {
+    width: 20% !important;
+  }
+}
+
+// visible print-only
+.visible-print {
+  display: none !important;
+}
+
+@media print {
+  .print-visible {
+    display: block !important;
+  }
+
+  .print-hidden {
+    display: none !important;
+  }
+}
+
+// responsive image
+.img-responsive {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+// responsive utilities
+
+/**
+ * for the benefit of screen-readers, hide content off-screen without resorting to `display:none;`,
+ * also add breakpoint specific options
+ */
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+// breakpoint-specific visible utility classes
+@if $responsive {
+  @include between-breakpoints($xs-min, $xs-max) {
+    .visually-hidden--xs {
+      @include visually-hidden;
+    }
+  }
+
+  @include between-breakpoints($sm-min, $sm-max) {
+    .visually-hidden--sm {
+      @include visually-hidden;
+    }
+  }
+
+  @include breakpoint(sm) {
+    .visually-hidden--sm-plus {
+      @include visually-hidden;
+    }
+  }
+
+  @include between-breakpoints($md-min, $md-max) {
+    .visually-hidden--md {
+      @include visually-hidden;
+    }
+  }
+
+  @include breakpoint(md) {
+    .visually-hidden--md-plus {
+      @include visually-hidden;
+    }
+  }
+
+  @include breakpoint(lg) {
+    .visually-hidden--lg {
+      @include visually-hidden;
+    }
+  }
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.hidden--xs-plus {
+  @include hidden;
+}
+
+// breakpoint-specific visible utility classes
+@if $responsive {
+  @include between-breakpoints($xs-min, $xs-max) {
+    .hidden--xs {
+      @include hidden;
+    }
+  }
+
+  @include between-breakpoints($sm-min, $sm-max) {
+    .hidden--sm {
+      @include hidden;
+    }
+  }
+
+  @include breakpoint(sm) {
+    .hidden--sm-plus {
+      @include hidden;
+    }
+  }
+
+  @include between-breakpoints($md-min, $md-max) {
+    .hidden--md {
+      @include hidden;
+    }
+  }
+
+  @include breakpoint(md) {
+    .hidden--md-plus {
+      @include visually-hidden;
+    }
+  }
+
+  @include breakpoint(lg) {
+    .hidden--lg {
+      @include hidden;
+    }
+  }
+}
+
+.display-block {
+  @include display-block;
+}
+
+// display:block breakpoint-specific visible utility classes
+@if $responsive {
+  @include between-breakpoints($xs-min, $xs-max) {
+    .display-block--xs {
+      @include display-block;
+    }
+  }
+
+  @include between-breakpoints($sm-min, $sm-max) {
+    .display-block--sm {
+      @include display-block;
+    }
+  }
+
+  @include breakpoint(sm) {
+    .display-block--sm-plus {
+      @include display-block;
+    }
+  }
+
+  @include between-breakpoints($md-min, $md-max) {
+    .display-block--md {
+      @include display-block;
+    }
+  }
+
+  @include breakpoint(md) {
+    .display-block--md-plus {
+      @include display-block;
+    }
+  }
+
+  @include breakpoint(lg) {
+    .display-block--lg {
+      @include display-block;
+    }
+  }
+}
+
+.display-inline {
+  @include display-inline;
+}
+
+// display:inline-block breakpoint-specific visible utility classes
+@if $responsive {
+  @include between-breakpoints($xs-min, $xs-max) {
+    .display-inline--xs {
+      @include display-inline;
+    }
+  }
+
+  @include between-breakpoints($sm-min, $sm-max) {
+    .display-inline--sm {
+      @include display-inline;
+    }
+  }
+
+  @include breakpoint(sm) {
+    .display-inline--sm-plus {
+      @include display-inline;
+    }
+  }
+
+  @include between-breakpoints($md-min, $md-max) {
+    .display-inline--md {
+      @include display-inline;
+    }
+  }
+
+  @include breakpoint(md) {
+    .display-inline--md-plus {
+      @include display-inline;
+    }
+  }
+
+  @include breakpoint(lg) {
+    .display-inline--lg {
+      @include display-inline;
+    }
+  }
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

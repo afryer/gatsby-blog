@@ -1,0 +1,163 @@
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+
+// Responsiveness
+// -------------------------
+// 'true' is default
+//  setting this creates extra responsive classes targetting defined breakpoints
+//  eg the 'visually-hidden' mixin
+$responsive: true !default;
+
+// Typography
+// -------------------------
+
+$font-family-sans: "Roboto", Arial, sans-serif !default;
+$font-family-serif: Georgia, "Times New Roman", Times, serif !default;
+$font-family-mono: Monaco, Menlo, Consolas, "Courier New", monospace !default;
+$font-family-times-new-roman: "Times New Roman", Times, Georgia, "DejaVu Serif",
+  serif;
+$font-family-times: Times, "Times New Roman", Georgia, "DejaVu Serif", serif;
+$font-family-georgia: Georgia, "Times New Roman", "DejaVu Serif", serif;
+$font-family-verdana: Verdana, Tahoma, "DejaVu Sans", sans-serif;
+$font-family-tahoma: Tahoma, Verdana, "DejaVu Sans", sans-serif;
+$font-family-helvetica: Helvetica, Arial, "Nimbus Sans L", sans-serif;
+$font-family-arial: Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+$font-family-base: $font-family-serif !default;
+$font-family-alt: $font-family-sans !default;
+
+$font-family-header: $font-family-sans;
+$font-family-text: $font-family-serif;
+
+// Custom 'brand' fonts
+$brand-font-1: "Roboto", sans-serif; //Available weights 400,600,700
+
+// Let's set the base font size to 62.5% (10px) for easier calculations
+$base-font-size: 62.5%;
+$base-line-height: 1.6 !default;
+
+$body-font-desktop: 1.8; // = 14px
+$body-font-mobile: 1.6; // = 14px
+
+// Font sizes
+$h1-large: 4.6;
+$h1-medium: 3.6;
+$h1-small: 1.9;
+
+$h2-large: 3.8;
+$h2-medium: 3;
+$h2-small: 1.6;
+
+$h3-large: 3.4;
+$h3-medium: 2.4;
+$h3-small: 1.4;
+
+$h4-large: 3;
+$h4-medium: 2;
+$h4-small: 1.4;
+
+$h5-large: 2.6;
+$h5-medium: 1.6;
+$h5-small: 1.4;
+
+$h6-large: 2.4;
+$h6-medium: 1.6;
+$h6-small: 1.4;
+
+$p-large: 1.8;
+$p-medium: 1.8;
+$p-small: 1.6;
+
+$bq-large: 3.8;
+$bq-medium: 3;
+$bq-small: 1.6;
+
+// Breakpoints
+// -------------------------
+
+$primary: #333436;
+$accent: #384d66;
+$containerWidth: 1440px;
+
+// Named breakpoints
+$breakpoint-xs: 320px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 992px;
+$breakpoint-lg: 1200px;
+
+// Suggestion - provide a minimum/maximum so media queries don't overlap when required
+// use as max/min values for mixins for responsive utilities etc
+
+$xs-min: 0;
+$xs-max: ($breakpoint-sm - 1);
+
+$sm-min: $breakpoint-sm;
+$sm-max: ($breakpoint-md - 1);
+
+$md-min: $breakpoint-md;
+$md-max: ($breakpoint-lg - 1);
+
+$lg-min: $breakpoint-lg;
+
+// Colors
+// -------------------------
+
+// Base colors
+$white: #fff;
+$black: #000;
+
+$grey-dark: #666;
+$grey-light: #ddd;
+$grey-lighter: #eee;
+
+$blue: #4777b7;
+$purple: #7d1f71;
+$green: #298700;
+$red: #db1731;
+$orange: #d08300;
+$yellow: #ff9;
+
+// Brand colors
+$brand-colour-1: $orange;
+
+// Text colors
+$color-text: #5b7376;
+$color-headings: #a0c427;
+$color-error: #eee;
+
+// Link colors
+$color-link-active: #666;
+$color-link-visited: #666;
+$color-link-hover: #333;
+$color-link-focus: #eee;
+$color-link-disabled: #eee;
+
+// Borders
+// -------------------------
+
+// Border colors
+$color-border: $grey-light;
+$color-border-dark: $grey-dark;
+$color-border-light: $grey-lighter;
+
+//  Border styling
+$border-radius: 5px;
+$border-width: 1px;
+$border-style: solid;
+$border-color: $color-border;
+$border: $border-width $border-style $border-color;
+
+// z-index scale (private vars)
+// Do not edit the z-index scale!
+// --------------------------------------------------
+$z-index-1: 100;
+$z-index-2: 200;
+$z-index-3: 300;
+$z-index-4: 400;
+$z-index-5: 500;
+$z-index-6: 600;
+$z-index-7: 700;
+$z-index-8: 800;
+$z-index-9: 900;
+$z-index-10: 1000;

@@ -1,0 +1,111 @@
+// Articles are for listing pages with a list of articles
+
+.articles {
+  padding: 0 32px;
+  //max-width: 900px;
+  width: 100%;
+  justify-content: center;
+  margin: 0 auto;
+
+  @media (max-width: 1000px) {
+    max-width: none;
+  }
+
+  @media (max-width: 700px) {
+    padding: 0 16px;
+  }
+}
+
+.article {
+  &.page-enter-active .narrow {
+    transition: transform 1s cubic-bezier(0.11, 0.89, 0.31, 0.99),
+      opacity 0.75s ease-out;
+  }
+
+  &.page-enter .narrow,
+  .page-leave-to .narrow {
+    transform: translateY(16px);
+  }
+}
+
+.article__single {
+  padding: 0 32px;
+  max-width: 900px;
+  width: 100%;
+  justify-content: center;
+  margin: 0 auto;
+
+  @media (max-width: 1000px) {
+    max-width: none;
+  }
+
+  @media (max-width: 700px) {
+    padding: 0 16px;
+  }
+}
+
+.article__image {
+  background-color: #fff;
+  padding: 16px;
+  display: block;
+  margin-bottom: 32px;
+
+  img {
+    display: block;
+    padding: 0;
+    margin-bottom: 16px;
+  }
+}
+
+.article__content {
+  border-top: 1px dotted #666;
+  padding-top: 32px;
+  margin-top: 32px;
+
+  p {
+    margin-bottom: 0;
+
+    & + p {
+      margin-top: 16px;
+    }
+  }
+
+  p {
+    margin-bottom: 32px;
+    margin-top: 0;
+  }
+
+  a {
+    color: red;
+    position: relative;
+    &:hover {
+      color: red;
+    }
+
+    &::after {
+      background: rgba(red, 0.5);
+      content: "";
+      height: 1px;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      top: 100%;
+      transform: translateY(-4px);
+      transition: height 0.1s, opacity 0.1s, transform 0.1s;
+      width: 100%;
+    }
+
+    &:hover,
+    &:focus {
+      &::after {
+        height: 4px;
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+  }
+
+  > *:first-child {
+    margin-top: 0;
+  }
+}

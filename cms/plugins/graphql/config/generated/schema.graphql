@@ -8,6 +8,7 @@ type Article {
   image: UploadFile
   slug: String
   author: UsersPermissionsUser
+  preview: String
 }
 
 input ArticleInput {
@@ -16,6 +17,7 @@ input ArticleInput {
   image: ID
   slug: String
   author: ID
+  preview: String
 }
 
 input createArticleInput {
@@ -77,6 +79,7 @@ input editArticleInput {
   image: ID
   slug: String
   author: ID
+  preview: String
 }
 
 input editFileInput {

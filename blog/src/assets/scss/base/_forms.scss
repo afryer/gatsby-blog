@@ -30,7 +30,7 @@ input,
 select,
 textarea {
   @include font-size($body-font-desktop);
-  font-family: $brand-font-1;
+  font-family: $font-family-sans;
 }
 
 textarea {
@@ -111,9 +111,9 @@ textarea:invalid {
   color: $red;
 }
 
-input[type='text'],
-input[type='email'],
-input[type='password'],
+input[type="text"],
+input[type="email"],
+input[type="password"],
 textarea,
 select {
   display: block;
@@ -127,7 +127,7 @@ select {
   border-radius: $border-radius;
 }
 
-input[type='text'] {
+input[type="text"] {
   padding: 8px 7px;
 }
 
@@ -165,13 +165,13 @@ select {
   cursor: pointer;
 }
 
-input[type='radio'],
-input[type='checkbox'] {
+input[type="radio"],
+input[type="checkbox"] {
   margin-right: 5px;
 }
 
-input[type='submit'],
-input[type='reset'] {
+input[type="submit"],
+input[type="reset"] {
   padding: 6px 20px;
 }
 
@@ -196,7 +196,6 @@ input[type='reset'] {
   @include breakpoint(sm) {
     width: 600px;
   }
-
 
   .form__group {
     @include breakpoint(sm) {
@@ -228,7 +227,6 @@ input[type='reset'] {
   @include breakpoint(sm) {
     width: 630px;
   }
-
 
   .form__group {
     margin-bottom: 5px;
@@ -293,7 +291,7 @@ input.uppercase:-ms-input-placeholder {
     }
 
     /* HTML5 Boilerplate accessible hidden styles */
-    [type='radio'] {
+    [type="radio"] {
       border: 0;
       clip: rect(0 0 0 0);
       height: 1px;
@@ -304,13 +302,13 @@ input.uppercase:-ms-input-placeholder {
       width: 1px;
     }
 
-    [type='radio'] + span {
+    [type="radio"] + span {
       display: block;
     }
 
     /* the basic, unchecked style */
-    [type='radio'] + span::before {
-      content: '';
+    [type="radio"] + span::before {
+      content: "";
       display: inline-block;
       width: 1em;
       height: 1em;
@@ -323,14 +321,14 @@ input.uppercase:-ms-input-placeholder {
     }
 
     /* the checked style using the :checked pseudo class */
-    [type='radio']:checked + span::before {
+    [type="radio"]:checked + span::before {
       background: green;
       box-shadow: 0 0 0 0.25em #000;
     }
 
     /* never forget focus styling */
-    [type='radio']:focus + span::after {
-      content: '\0020\2190';
+    [type="radio"]:focus + span::after {
+      content: "\0020\2190";
       font-size: 1.5em;
       line-height: 1;
       vertical-align: -0.125em;

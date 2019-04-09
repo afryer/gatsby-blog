@@ -105,16 +105,12 @@ h6,
 a {
   color: $color-link-active;
   cursor: pointer;
-  text-decoration: none;
-}
-
-a:visited {
-  color: $color-link-visited;
+  text-decoration: underline;
 }
 
 a:hover {
   color: $color-link-hover;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:focus {
@@ -126,7 +122,7 @@ a:focus {
 // Standard text paragraphs
 
 p {
-  margin: 0 0 10px 0;
+  margin: 0 0 30px 0;
   padding: 0;
 }
 

@@ -15,23 +15,12 @@ $responsive: true !default;
 $font-family-sans: "Roboto", Arial, sans-serif !default;
 $font-family-serif: Georgia, "Times New Roman", Times, serif !default;
 $font-family-mono: Monaco, Menlo, Consolas, "Courier New", monospace !default;
-$font-family-times-new-roman: "Times New Roman", Times, Georgia, "DejaVu Serif",
-  serif;
-$font-family-times: Times, "Times New Roman", Georgia, "DejaVu Serif", serif;
-$font-family-georgia: Georgia, "Times New Roman", "DejaVu Serif", serif;
-$font-family-verdana: Verdana, Tahoma, "DejaVu Sans", sans-serif;
-$font-family-tahoma: Tahoma, Verdana, "DejaVu Sans", sans-serif;
-$font-family-helvetica: Helvetica, Arial, "Nimbus Sans L", sans-serif;
-$font-family-arial: Arial, "Helvetica Neue", Helvetica, sans-serif;
 
 $font-family-base: $font-family-serif !default;
 $font-family-alt: $font-family-sans !default;
 
 $font-family-header: $font-family-sans;
 $font-family-text: $font-family-serif;
-
-// Custom 'brand' fonts
-$brand-font-1: "Roboto", sans-serif; //Available weights 400,600,700
 
 // Let's set the base font size to 62.5% (10px) for easier calculations
 $base-font-size: 62.5%;
@@ -43,23 +32,23 @@ $body-font-mobile: 1.6; // = 14px
 // Font sizes
 $h1-large: 4.6;
 $h1-medium: 3.6;
-$h1-small: 1.9;
+$h1-small: 2.8;
 
 $h2-large: 3.8;
 $h2-medium: 3;
-$h2-small: 1.6;
+$h2-small: 2.35;
 
 $h3-large: 3.4;
 $h3-medium: 2.4;
-$h3-small: 1.4;
+$h3-small: 2.2;
 
 $h4-large: 3;
 $h4-medium: 2;
-$h4-small: 1.4;
+$h4-small: 2;
 
 $h5-large: 2.6;
-$h5-medium: 1.6;
-$h5-small: 1.4;
+$h5-medium: 1.8;
+$h5-small: 1.8;
 
 $h6-large: 2.4;
 $h6-medium: 1.6;

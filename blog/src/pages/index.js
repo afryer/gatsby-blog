@@ -30,6 +30,7 @@ export const pageQuery = graphql`
             }
           }
           title
+          created_at
           slug
           content
           preview

@@ -31,6 +31,7 @@ export const query = graphql`
     strapiArticle(id: { eq: $id }) {
       title
       content
+      created_at
       image {
         childImageSharp {
           fixed(width: 200, height: 125) {

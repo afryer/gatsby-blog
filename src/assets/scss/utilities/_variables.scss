@@ -12,15 +12,15 @@ $responsive: true !default;
 // Typography
 // -------------------------
 
-$font-family-sans: "Roboto", Arial, sans-serif !default;
-$font-family-serif: Georgia, "Times New Roman", Times, serif !default;
-$font-family-mono: Monaco, Menlo, Consolas, "Courier New", monospace !default;
+$font-family-sans: 'Lato', Arial, sans-serif !default;
+$font-family-serif: Georgia, 'Times New Roman', Times, serif !default;
+$font-family-mono: Monaco, Menlo, Consolas, 'Courier New', monospace !default;
 
 $font-family-base: $font-family-serif !default;
 $font-family-alt: $font-family-sans !default;
 
-$font-family-header: $font-family-sans;
-$font-family-text: $font-family-serif;
+$font-family-header: 'Raleway', Arial, sans-serif !default;
+$font-family-text: $font-family-sans;
 
 // Let's set the base font size to 62.5% (10px) for easier calculations
 $base-font-size: 62.5%;
@@ -54,11 +54,11 @@ $h6-large: 2.4;
 $h6-medium: 1.6;
 $h6-small: 1.4;
 
-$p-large: 1.8;
-$p-medium: 1.8;
-$p-small: 1.6;
+$p-large: 2.4;
+$p-medium: 2;
+$p-small: 1.8;
 
-$bq-large: 3.8;
+$bq-large: 3.6;
 $bq-medium: 3;
 $bq-small: 1.6;
 
@@ -107,12 +107,9 @@ $red: #db1731;
 $orange: #d08300;
 $yellow: #ff9;
 
-// Brand colors
-$brand-colour-1: $orange;
-
 // Text colors
 $color-text: #5b7376;
-$color-headings: #a0c427;
+$color-headings: #070707;
 $color-error: #eee;
 
 // Link colors
@@ -136,17 +133,3 @@ $border-width: 1px;
 $border-style: solid;
 $border-color: $color-border;
 $border: $border-width $border-style $border-color;
-
-// z-index scale (private vars)
-// Do not edit the z-index scale!
-// --------------------------------------------------
-$z-index-1: 100;
-$z-index-2: 200;
-$z-index-3: 300;
-$z-index-4: 400;
-$z-index-5: 500;
-$z-index-6: 600;
-$z-index-7: 700;
-$z-index-8: 800;
-$z-index-9: 900;
-$z-index-10: 1000;

@@ -55,56 +55,25 @@
   @return $num / ($num * 0 + 1);
 }
 
-@mixin rem-fallback($property, $values...) {
-  $max: length($values);
-  $pxValues: '';
-  $remValues: '';
-
-  @for $i from 1 through $max {
-    $value: strip-unit(nth($values, $i));
-    $pxValues: #{$pxValues + $value * 10}px;
-
-    @if $i < $max {
-      $pxValues: #{$pxValues + ' '};
-    }
-  }
-
-  @for $i from 1 through $max {
-    $value: strip-unit(nth($values, $i));
-    $remValues: #{$remValues + $value}rem;
-
-    @if $i < $max {
-      $remValues: #{$remValues + ' '};
-    }
-  }
-
-  #{$property}: $pxValues;
-  #{$property}: $remValues;
-}
-
 // uses breakpoints defined in variables.scss
 @mixin breakpoint($point, $value: 0) {
   @if $point == xs {
     @media screen and (max-width: $xs-max) {
       @content;
     }
-  }
-  @else if $point == sm {
+  } @else if $point == sm {
     @media screen and (min-width: $sm-min) {
       @content;
     }
-  }
-  @else if $point == md {
+  } @else if $point == md {
     @media screen and (min-width: $md-min) {
       @content;
     }
-  }
-  @else if $point == lg {
+  } @else if $point == lg {
     @media screen and (min-width: $lg-min) {
       @content;
     }
-  }
-  @else {
+  } @else {
     @media screen and ($point: $value) {
       @content;
     }
@@ -114,48 +83,5 @@
 @mixin between-breakpoints($min, $max) {
   @media screen and (min-width: $min) and (max-width: $max) {
     @content;
-  }
-}
-
-// get-sprite.sass
-// sprite mixin that can be used to include a sprite into media queries
-// @include get-sprite($map, $sprite, $height, $width, $offset-x, $offset-y, $repeat);
-// $map is the name of the sprite map, this is auto-generated as a global
-// sass var when you do a (for instance) @import 'sprites-x2/*.png'
-// ----------
-// Example: @include get-sprite($sprites-x2-sprites, logo, false, false);
-//
-
-@mixin get-sprite($map, $sprite, $height: true, $width: true, $offset-x: 0, $offset-y: 0, $repeat: no-repeat) {
-  //http://compass-style.org/reference/compass/helpers/sprites/#sprite-file
-  $sprite-image: sprite-file($map, $sprite);
-
-  // http://compass-style.org/reference/compass/helpers/sprites/#sprite-url
-  $sprite-map: sprite-url($map);
-
-  // http://compass-style.org/reference/compass/helpers/sprites/#sprite-position
-  $sprite-position: sprite-position($map, $sprite, $offset-x, $offset-y);
-
-  // Returns background
-  background: $sprite-map $sprite-position $repeat;
-
-  // http://compass-style.org/reference/compass/helpers/image-dimensions/
-  // Checks to see if the user wants height returned
-  @if $height == true {
-    // Gets the height of the sprite-image
-    $sprite-height: image-height($sprite-image);
-
-    // Returns the height
-    height: $sprite-height;
-  }
-
-  // http://compass-style.org/reference/compass/helpers/image-dimensions/
-  // Checks to see if the user wants height returned
-  @if $width == true {
-    // Gets the width of the sprite-image
-    $sprite-width: image-width($sprite-image);
-
-    // Returns the width
-    width: $sprite-width;
   }
 }

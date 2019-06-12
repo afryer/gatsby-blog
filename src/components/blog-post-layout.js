@@ -13,7 +13,6 @@ const BlogPostLayout = ({ children, pageContext }) => {
       <article>
         <header>
           <h1>{title}</h1>
-          <span>Author: {author}</span>
           <time>Date: {date}</time>
         </header>
         <MDXProvider>{children}</MDXProvider>

@@ -43,23 +43,17 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
-
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              maxWidth: 590
-            }
-          }
-        ]
+        fonts: [
+          `Raleway\:300,500,500i,700`,
+          `Lato\:300,400,400i,700` // you can also specify font weights and styles
+        ],
+        display: 'swap'
       }
     },
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

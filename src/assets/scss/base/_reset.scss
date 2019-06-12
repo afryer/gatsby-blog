@@ -21,12 +21,12 @@ html {
 
 body {
   @include font-size($p-small);
-  @include breakpoint(sm){
+  @include breakpoint(sm) {
     @include font-size($p-medium);
-  };
-  @include breakpoint(md){
+  }
+  @include breakpoint(md) {
     @include font-size($p-large);
-  };
+  }
   background-color: $white;
   color: $color-text;
   font-family: $font-family-text;
@@ -38,7 +38,7 @@ body {
 ::-moz-selection,
 ::selection {
   color: #fff;
-  background: $brand-colour-1;
+  background: $color-text;
   text-shadow: none;
 }
 

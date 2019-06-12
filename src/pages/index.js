@@ -17,7 +17,6 @@ const IndexPage = ({ data }) => {
           <div key={node.id}>
             <header>
               <h2>{title}</h2>
-              <p>Posting By {author}</p>
             </header>
             <p>{node.excerpt}</p>
             <Link to={node.fields.slug}>View Article</Link>

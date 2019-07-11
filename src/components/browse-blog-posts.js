@@ -11,7 +11,9 @@ const BrowseBlogPosts = ({ pageContext }) => {
         return (
           <div key={node.id}>
             <header>
-              <h2>{title}</h2>
+              <Link to={node.fields.slug}>
+                <h2>{title}</h2>
+              </Link>
             </header>
             <p>{node.excerpt}</p>
             <Link to={node.fields.slug}>View Article</Link>

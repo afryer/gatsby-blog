@@ -12,11 +12,13 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
 
       {posts.map(({ node }) => {
-        const { title, author } = node.frontmatter
+        const { title } = node.frontmatter
         return (
           <div key={node.id}>
             <header>
-              <h2>{title}</h2>
+              <Link to={node.fields.slug}>
+                <h2>{title}</h2>
+              </Link>
             </header>
             <p>{node.excerpt}</p>
             <Link to={node.fields.slug}>View Article</Link>
@@ -32,7 +34,7 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query IndexPage {
-    allMdx {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           id
@@ -42,7 +44,8 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            author
+            date(formatString: "MM/DD/YYYY")
+            categories
           }
         }
       }

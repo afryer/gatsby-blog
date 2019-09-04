@@ -15,11 +15,14 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 1035,
-              sizeByPixelDensity: true
+              maxWidth: 835,
+              linkImagesToOriginal: false,
+              showCaptions: true,
+              withWebp: true
             }
           }
         ],
+        plugins: [`gatsby-remark-images`],
         // Apply gatsby-mdx to both .mdx and .md files
         extensions: ['.mdx', '.md'],
         defaultLayout: require.resolve('./src/components/blog-post-layout.js')

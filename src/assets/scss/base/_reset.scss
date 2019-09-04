@@ -43,10 +43,8 @@ body {
 }
 
 img {
-  // option to make images responsive by default
-  // max-width: 100%;
-  // height: auto;
+  max-width: 100%;
+  height: auto;
   display: block;
-  vertical-align: middle;
   -ms-interpolation-mode: bicubic;
 }

@@ -41,6 +41,12 @@ The further up I went the worse my headache was. I found myself squinting and cl
 
 Eventually my head went. Stop pushing myself and just get round. Hopefully my headache will go. This was the crux of the race and I had reverted to a training run. So much so I even had a sit down on the way up.
 
-Easing off meant a steady stream of people coming past me. Everyone quite spaced out by this point. The tops were in clag with the occasional gap into the clouds to see
+Easing off meant a steady stream of people coming past me. Everyone quite spaced out by this point. The tops were in clag with the occasional gap into the clouds to see.
+
+A slow run aross the top part of the route but soon enough at the next checkpoint at red screes. This time I shoved a load of sandwiches down my mouth which instantly sorted my stomach but my head still hurt. Filling up with loads of water, it was a slow stop but needed before tackling the long run in.
+
+The run in from there was one of just getting round. I wanted it to be over. Bored of running with a headache and a poor performance.
+
+Eventually it finished and I was presented with a medal. A weird concept which felt like school sports day where everyone wins.
 
 ##

@@ -1,14 +1,15 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 
-import Layout from '../components/layout'
+import HomepageLayout from '../components/homepageLayout'
 import SEO from '../components/seo'
+import './index.scss'
 
 const IndexPage = ({ data }) => {
   const { edges: posts } = data.allMdx
 
   return (
-    <Layout>
+    <HomepageLayout>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
 
       {posts.map(({ node }) => {
@@ -26,7 +27,7 @@ const IndexPage = ({ data }) => {
           </div>
         )
       })}
-    </Layout>
+    </HomepageLayout>
   )
 }
 

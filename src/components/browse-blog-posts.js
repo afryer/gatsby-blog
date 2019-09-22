@@ -7,7 +7,7 @@ const BrowseBlogPosts = ({ pageContext }) => {
   return (
     <Layout>
       {group.map(({ node }) => {
-        const { title, author } = node.frontmatter
+        const { title } = node.frontmatter
         return (
           <div key={node.id}>
             <header>

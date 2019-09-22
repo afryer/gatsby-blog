@@ -4,6 +4,7 @@ import Layout from './layout'
 import Helmet from 'react-helmet'
 
 const BlogPostLayout = ({ children, pageContext }) => {
+  console.log(pageContext)
   const { title, date } = pageContext.frontmatter
 
   return (

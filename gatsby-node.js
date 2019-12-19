@@ -17,26 +17,3 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 }
-
-// Programmatically create the pages for browsing blog posts
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
-  return graphql(`
-    query {
-      allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {
-        edges {
-          node {
-            id
-            excerpt(pruneLength: 250)
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-            }
-          }
-        }
-      }
-    }
-  `)
-}

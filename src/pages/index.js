@@ -1,3 +1,4 @@
+// homepage template
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 

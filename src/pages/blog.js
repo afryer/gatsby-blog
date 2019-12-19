@@ -1,17 +1,36 @@
+// homepage template
 import React from 'react'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 
-import Layout from '../components/layout'
+import HomepageLayout from '../components/homepageLayout'
 import SEO from '../components/seo'
 import './index.scss'
-import BrowseBlogPosts from '../components/blog-post-layout'
 
 const BlogPage = ({ data }) => {
+  const { edges: posts } = data.allMdx
+
   return (
-    <Layout>
+    <HomepageLayout>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-      <BrowseBlogPosts />
-    </Layout>
+
+      {posts.map(({ node }) => {
+        const { title, date } = node.frontmatter
+
+        return (
+          <div key={node.id}>
+            <header>
+              <Link to={node.fields.slug}>
+                <h2>{title}</h2>
+              </Link>
+              <p>{date}</p>
+            </header>
+            <p>{node.excerpt}</p>
+            <Link to={node.fields.slug}>View Article</Link>
+            <hr />
+          </div>
+        )
+      })}
+    </HomepageLayout>
   )
 }
 
@@ -29,7 +48,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            date(formatString: "MM/DD/YYYY")
+            date(formatString: "DD/MM/YYYY")
             categories
           }
         }

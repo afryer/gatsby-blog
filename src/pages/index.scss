@@ -15,3 +15,26 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.siteTitle {
+  display: inline-block;
+}
+.wrapper {
+  margin: 0 auto;
+  max-width: 840px;
+  padding: 0px 1.0875rem 1.45rem;
+  padding-top: 0;
+}
+
+.navigation {
+  float: right;
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: inline;
+    list-style: none;
+    margin-left: 20px;
+  }
+}

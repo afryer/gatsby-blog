@@ -38,29 +38,5 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     }
-  `).then((results, errors) => {
-    if (errors) return Promise.reject(errors)
-    const posts = results.data.allMdx.edges
-
-    // This little algo takes the array of posts and groups
-    // them based on this `size`. I used a small number just
-    // for testing since there are only three posts
-    let size = 2
-    let start = 0
-    let groupedPosts = Array.from(Array(Math.ceil(posts.length / size)))
-    groupedPosts = groupedPosts.map(() => {
-      const group = posts.slice(start, start + size)
-      start += size
-      return group
-    })
-
-    groupedPosts.forEach((group, index) => {
-      const page = index + 1
-      createPage({
-        path: `/blog/${page}`,
-        component: path.resolve('./src/components/browse-blog-posts.js'),
-        context: { groupedPosts, group, page }
-      })
-    })
-  })
+  `)
 }

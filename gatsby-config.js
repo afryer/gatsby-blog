@@ -56,7 +56,12 @@ module.exports = {
         display: 'swap'
       }
     },
-
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: 'anthonyfryer'
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -1,0 +1,10 @@
+.socialLinks__li {
+  list-style: none;
+  display: inline;
+}
+.socialLinks a {
+  margin: 0 20px;
+}
+.socialLinks svg {
+  width: 25px;
+}

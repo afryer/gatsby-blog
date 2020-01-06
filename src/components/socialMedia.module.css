@@ -1,10 +1,20 @@
+.socialLinks ul {
+  margin: 0;
+  padding: 0;
+}
+
 .socialLinks__li {
   list-style: none;
-  display: inline;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
 }
+
 .socialLinks a {
-  margin: 0 20px;
+  display: block;
+  margin-right: 10px;
 }
+
 .socialLinks svg {
-  width: 25px;
+  height: 30px;
 }

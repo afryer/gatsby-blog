@@ -16,19 +16,19 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
-      <nav className="navigation">
-        <ul>
-          <li>
-            <Link to="/blog">blog</Link>
-          </li>
-          <li>
-            <Link to="/contact">contact</Link>
-          </li>
-        </ul>
-      </nav>
     </div>
   </header>
 )
+// <nav className="navigation">
+//   <ul>
+//     <li>
+//       <Link to="/blog">blog</Link>
+//     </li>
+//     <li>
+//       <Link to="/contact">contact</Link>
+//     </li>
+//   </ul>
+// </nav>
 
 Header.propTypes = {
   siteTitle: PropTypes.string

@@ -4,8 +4,6 @@ const LinkedInIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height="45"
-      width="45"
       viewBox="0 0 4.7 4.67"
       version="1.1"
     >

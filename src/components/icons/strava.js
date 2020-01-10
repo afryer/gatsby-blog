@@ -2,13 +2,7 @@ import React from 'react'
 
 const StravaIcon = () => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      height="45"
-      width="45"
-      viewBox="0 0 45 45"
-      version="1.1"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" version="1.1">
       <g transform="translate(-18.770907,-6.6709066)" id="Edges" />
       <g transform="translate(-18.770907,-6.6709066)" id="Background">
         <path

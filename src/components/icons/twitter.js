@@ -4,8 +4,6 @@ const TwitterIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="55.390739"
-      height="45.000065"
       viewBox="-0.25 -0.25 24.58241 19.974179"
       version="1.1"
     >

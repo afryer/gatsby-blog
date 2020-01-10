@@ -5,7 +5,7 @@ import InstagramIcon from './icons/instagram'
 import LinkedInIcon from './icons/linkedin'
 import styles from '../components/socialMedia.module.css'
 
-const socialMedia = () => {
+const SocialMedia = () => {
   return (
     <div className={styles.socialLinks}>
       <ul>
@@ -50,4 +50,4 @@ const socialMedia = () => {
   )
 }
 
-export default socialMedia
+export default SocialMedia

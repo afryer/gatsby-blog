@@ -11,7 +11,10 @@ const IndexPage = ({ data }) => {
 
   return (
     <HomepageLayout>
-      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <SEO
+        title="Home"
+        keywords={[`gatsby`, `anthony fryer`, `running`, `code`]}
+      />
 
       {posts.map(({ node }) => {
         const { title } = node.frontmatter

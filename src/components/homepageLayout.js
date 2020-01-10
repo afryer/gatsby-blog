@@ -4,7 +4,6 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
 import '../assets/scss/styles.scss'
-import SocialMedia from './socialMedia'
 
 const HomepageLayout = ({ children }) => (
   <StaticQuery
@@ -21,9 +20,9 @@ const HomepageLayout = ({ children }) => (
       <>
         <div>
           <Header siteTitle={'Anthony Fryer'} />
+          <div className="bg"></div>
         </div>
         <div className="wrapper">
-          <SocialMedia />
           <main>{children}</main>
           <footer>
             © {new Date().getFullYear()}, Built with

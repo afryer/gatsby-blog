@@ -19,14 +19,7 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 840,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0
-          }}
-        >
+        <div className="wrapper">
           <main>{children}</main>
           <footer>
             © {new Date().getFullYear()}, Built with

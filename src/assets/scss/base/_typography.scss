@@ -19,7 +19,7 @@ h6,
   margin: 0;
   padding: 0;
   color: $color-headings;
-  font-weight: 700;
+  font-weight: 300;
   font-family: $font-family-header;
   //text-shadow: 1px 1px 1px #8e948f;
 }
@@ -105,12 +105,12 @@ h6,
 a {
   color: $color-link-active;
   cursor: pointer;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:hover {
   color: $color-link-hover;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 a:focus {
@@ -124,6 +124,7 @@ a:focus {
 p {
   margin: 0 0 30px 0;
   padding: 0;
+  font-weight:300;
 }
 
 // List styles

@@ -16,7 +16,7 @@ const HomepageLayout = ({ children }) => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <>
         <div>
           <Header siteTitle={'Anthony Fryer'} />
@@ -36,7 +36,7 @@ const HomepageLayout = ({ children }) => (
 )
 
 HomepageLayout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 }
 
 export default HomepageLayout

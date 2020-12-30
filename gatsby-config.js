@@ -25,7 +25,7 @@ module.exports = {
         plugins: [`gatsby-remark-images`],
         // Apply gatsby-mdx to both .mdx and .md files
         extensions: ['.mdx', '.md'],
-        defaultLayout: require.resolve('./src/components/blog-post-layout.js')
+        defaultLayout: require.resolve('./src/pages/templates/post.js')
       }
     },
     `gatsby-transformer-sharp`,

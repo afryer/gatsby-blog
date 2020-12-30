@@ -1,9 +1,9 @@
 import React from 'react'
-import TwitterIcon from './icons/twitter'
-import StravaIcon from './icons/strava'
-import InstagramIcon from './icons/instagram'
-import LinkedInIcon from './icons/linkedin'
-import styles from '../components/socialMedia.module.css'
+import TwitterIcon from '../Icons/twitter'
+import StravaIcon from '../Icons/strava'
+import InstagramIcon from '../Icons/instagram'
+import LinkedInIcon from '../Icons/linkedin'
+import styles from './socialMedia.module.css'
 
 const SocialMedia = () => {
   return (

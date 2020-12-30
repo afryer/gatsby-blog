@@ -1,6 +1,7 @@
 ---
 title: The Trigger Race 2020
 date: '2020-13-01'
+banner: './bleaklow.jpg'
 categories:
   - running
   - race

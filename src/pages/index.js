@@ -2,8 +2,8 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 
-import HomepageLayout from '../components/homepageLayout'
-import SEO from '../components/seo'
+import HomepageLayout from './templates/homepageLayout'
+import SEO from '../components/Seo/seo'
 import './index.scss'
 
 const IndexPage = ({ data }) => {

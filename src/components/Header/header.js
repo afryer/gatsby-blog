@@ -1,7 +1,7 @@
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-import SocialMedia from './SocialMedia'
+import SocialMedia from "../SocialMedia/socialMedia"
 import Headroom from 'react-headroom'
 
 const Header = ({ siteTitle }) => {
@@ -34,16 +34,7 @@ const Header = ({ siteTitle }) => {
     </Headroom>
   )
 }
-// <nav className="navigation">
-//   <ul>
-//     <li>
-//       <Link to="/blog">blog</Link>
-//     </li>
-//     <li>
-//       <Link to="/contact">contact</Link>
-//     </li>
-//   </ul>
-// </nav>
+
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

@@ -2,17 +2,16 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 
-import HomepageLayout from '../components/homepageLayout'
-import SEO from '../components/seo'
-import './index.scss'
+import Layout from '../templates/layout'
+import SEO from '../../components/Seo/seo'
+import '../index.scss'
 
 const BlogPage = ({ data }) => {
   const { edges: posts } = data.allMdx
 
   return (
-    <HomepageLayout>
+    <Layout>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-
       {posts.map(({ node }) => {
         const { title, date } = node.frontmatter
 
@@ -30,7 +29,7 @@ const BlogPage = ({ data }) => {
           </div>
         )
       })}
-    </HomepageLayout>
+    </Layout>
   )
 }
 

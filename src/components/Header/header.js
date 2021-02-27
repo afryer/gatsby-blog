@@ -2,22 +2,12 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import SocialMedia from "../SocialMedia/socialMedia"
-import Headroom from 'react-headroom'
-
+import styles from "./header.module.css"
 const Header = ({ siteTitle }) => {
-  const pinned = () => console.log('pinned')
-  const unpinned = () => console.log('unpinned')
+
   return (
-    <Headroom
-      onPin={pinned}
-      onUnpin={unpinned}
-      wrapperStyle={{}}
-      style={{
-        background: '#fff',
-        boxShadow: '1px 1px 1px rgba(0,0,0,0.25)',
-      }}
-    >
-      <header className="header">
+
+    <header className={styles.header}>
         <h1 className="siteTitle">
           <Link
             to="/"
@@ -31,7 +21,6 @@ const Header = ({ siteTitle }) => {
         </h1>
         <SocialMedia />
       </header>
-    </Headroom>
   )
 }
 

@@ -6,7 +6,15 @@ import Footer from '../../components/Footer/footer'
 
 import '../../assets/scss/styles.scss'
 
-const HomepageLayout = ({ children }) => (
+const HomepageLayout = ({ children }) => {
+
+  const scrollToElement = () => { 
+    document.getElementById("wrapper").scrollIntoView({ 
+      behavior: 'smooth' 
+    })
+  }
+
+  return (
   <StaticQuery
     query={graphql`
       query SiteQuery {
@@ -20,17 +28,21 @@ const HomepageLayout = ({ children }) => (
     render={(data) => (
       <>
         <div>
-          <Header siteTitle={data.site.siteMetadata.title} />
-          <div className="bg"></div>
+          <div className="bg">
+                      <Header siteTitle={data.site.siteMetadata.title} />
+
+            <button className="media-header-promo__button" onClick={scrollToElement}><span className="visually-hidden">Scroll down</span></button>
+          </div>
         </div>
-        <div className="wrapper">
+        <div className="wrapper" id="wrapper">
           <main>{children}</main>
           <Footer />
         </div>
       </>
     )}
   />
-)
+  )
+}
 
 HomepageLayout.propTypes = {
   children: PropTypes.node.isRequired,
